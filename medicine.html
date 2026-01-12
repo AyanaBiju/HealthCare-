@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HealthCare+ | Medication Details</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #eef6fb;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a9396;
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Page Header */
+.page-header {
+    background: #4ea5ac;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.page-header h1 .tablet-icon {
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.title {
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: #005f73;
+    text-align: center;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #0a9396;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s forwards;
+}
+
+.med-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0a9396;
+}
+
+.med-info {
+    font-size: 15px;
+    color: #555;
+}
+
+.time {
+    background: #e0fbfc;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #005f73;
+}
+
+.status {
+    padding: 12px;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.status.taken {
+    background: #38b000;
+}
+
+.status.pending {
+    background: #e63946;
+    animation: pulse 1.5s infinite;
+}
+
+/* Footer */
+.footer {
+    background: #0a9396;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">HealthCare+</div>
+    <ul>
+        <li><a href="HOME.html">Home</a></li>
+    </ul>
+</div>
+
+<!-- Page Header -->
+<div class="page-header">
+    <h1><span class="tablet-icon">💊</span> Medication Details</h1>
+</div>
+
+<!-- Content -->
+<div class="container">
+    <div class="title">Your Daily Medication Schedule</div>
+
+    <div class="card">
+        <div>
+            <div class="med-name">Paracetamol</div>
+            <div class="med-info">500mg • 1 Tablet</div>
+        </div>
+        <div class="med-info">Treats fever and pain<br>After food</div>
+        <div class="time">08:00 AM</div>
+        <div class="status taken">Taken</div>
+    </div>
+
+    <div class="card">
+        <div>
+            <div class="med-name">Metformin</div>
+            <div class="med-info">850mg • 1 Tablet</div>
+        </div>
+        <div class="med-info">Controls blood sugar<br>After breakfast</div>
+        <div class="time">09:30 AM</div>
+        <div class="status pending">Pending</div>
+    </div>
+
+    <div class="card">
+        <div>
+            <div class="med-name">Amoxicillin</div>
+            <div class="med-info">250mg • 1 Capsule</div>
+        </div>
+        <div class="med-info">Antibiotic<br>After lunch</div>
+        <div class="time">02:00 PM</div>
+        <div class="status pending">Pending</div>
+    </div>
+
+    <div class="card">
+        <div>
+            <div class="med-name">Vitamin D</div>
+            <div class="med-info">1 Tablet</div>
+        </div>
+        <div class="med-info">Bone health<br>After dinner</div>
+        <div class="time">09:00 PM</div>
+        <div class="status pending">Pending</div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    © 2026 HealthCare+. All rights reserved.
+</div>
+
+<script>
+document.querySelectorAll('.status').forEach(status => {
+    status.addEventListener('click', () => {
+        if (status.classList.contains('pending')) {
+            status.classList.remove('pending');
+            status.classList.add('taken');
+            status.textContent = 'Taken';
+        } else {
+            status.classList.remove('taken');
+            status.classList.add('pending');
+            status.textContent = 'Pending';
+        }
+    });
+});
+</script>
+
+</body>
+</html>

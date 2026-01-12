@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HealthCare+ | Medication Details</title>
+
+<style>
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f7fb;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.header {
+    background: #0a9396;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #005f73;
+    text-align: center;
+    position: relative;
+}
+.title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #0a9396;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Card styles */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    align-items: center;
+    gap: 15px;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeUp 0.6s forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.med-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0a9396;
+}
+
+.med-info {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.time {
+    background: #e0fbfc;
+    padding: 12px 10px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #005f73;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.time:hover {
+    transform: scale(1.05);
+    background: #c7f0f3;
+}
+
+.status {
+    padding: 12px;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease;
+}
+.status.taken {
+    background: #38b000;
+}
+.status.pending {
+    background: #e63946;
+}
+.status:hover {
+    transform: scale(1.05);
+}
+
+/* Card animation on load */
+@keyframes fadeUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .time, .status {
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    💊 HealthCare+ – Medication Details
+</div>
+
+<div class="container">
+    <div class="title">Your Daily Medication Schedule</div>
+
+    <div class="card" style="animation-delay: 0.1s;">
+        <div>
+            <div class="med-name">Paracetamol</div>
+            <div class="med-info">500mg • 1 Tablet</div>
+        </div>
+        <div class="med-info">
+            Treats fever and pain<br>
+            After food
+        </div>
+        <div class="time">08:00 AM</div>
+        <div class="status taken">Taken</div>
+    </div>
+
+    <div class="card" style="animation-delay: 0.2s;">
+        <div>
+            <div class="med-name">Metformin</div>
+            <div class="med-info">850mg • 1 Tablet</div>
+        </div>
+        <div class="med-info">
+            Controls blood sugar<br>
+            After breakfast
+        </div>
+        <div class="time">09:30 AM</div>
+        <div class="status pending">Pending</div>
+    </div>
+
+    <div class="card" style="animation-delay: 0.3s;">
+        <div>
+            <div class="med-name">Amoxicillin</div>
+            <div class="med-info">250mg • 1 Capsule</div>
+        </div>
+        <div class="med-info">
+            Antibiotic<br>
+            After lunch
+        </div>
+        <div class="time">02:00 PM</div>
+        <div class="status pending">Pending</div>
+    </div>
+
+    <div class="card" style="animation-delay: 0.4s;">
+        <div>
+            <div class="med-name">Vitamin D</div>
+            <div class="med-info">1 Tablet</div>
+        </div>
+        <div class="med-info">
+            Bone health<br>
+            After dinner
+        </div>
+        <div class="time">09:00 PM</div>
+        <div class="status pending">Pending</div>
+    </div>
+
+</div>
+
+</body>
+</html>
